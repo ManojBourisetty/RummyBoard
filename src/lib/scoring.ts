@@ -18,17 +18,7 @@ export function computeTotals(game: GameState): PlayerTotal[] {
 
   return game.players.map((player) => {
     const total = totals.get(player.id) ?? 0;
-    const isOut = game.targetScore != null && total >= game.targetScore;
+    const isOut = game.targetScore != null && total > game.targetScore;
     return { player, total, isOut };
   });
-}
-
-export function newlyOutPlayers(
-  before: PlayerTotal[],
-  after: PlayerTotal[]
-): PlayerTotal[] {
-  const wasOut = new Set(
-    before.filter((p) => p.isOut).map((p) => p.player.id)
-  );
-  return after.filter((p) => p.isOut && !wasOut.has(p.player.id));
 }
