@@ -25,7 +25,7 @@ export default function TargetScore({ value, onChange }: Props) {
           className="w-32 rounded-lg border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:border-emerald-500 dark:border-white/15 dark:bg-black/30"
         />
         <span className="text-sm text-black/50 dark:text-white/50">
-          — going over this eliminates a player
+          — reaching this eliminates a player
         </span>
       </div>
     </section>
